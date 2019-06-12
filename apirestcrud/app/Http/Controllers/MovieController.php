@@ -43,22 +43,30 @@ class MovieController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Movie  $movie
+     * @param  \App\Movie  $movie_id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Movie $movie)
+    public function update(Request $request, $movie_id)
     {
-
+        $movie = \App\Movie::find($movie_id);
+        $movie->name = $request->get('name');
+        $movie->description = $request->get('description');
+        $movie->year= $request->get('year');
+        $movie->genere = $request->get('genere');
+        $movie->duration = $request->get('duration');
+        $movie->save();
+        echo json_encode($movie);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Movie  $movie
+     * @param  \App\Movie  $movie_id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Movie $movie)
+    public function destroy($movie_id)
     {
-        //
+        $movie = \App\Movie::find($movie_id);
+        $movie->delete();
     }
 }
