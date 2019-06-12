@@ -14,18 +14,10 @@ class MovieController extends Controller
      */
     public function index()
     {
-        //
+        $movies = Movie::get();
+        echo json_encode($movies);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -35,30 +27,17 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //print_r($request->all());
+        $movie = new \App\Movie;
+        $movie->name = $request->get('name');
+        $movie->description = $request->get('description');
+        $movie->year= $request->get('year');
+        $movie->genere = $request->get('genere');
+        $movie->duration = $request->get('duration');
+        $movie->save();
+        echo json_encode($movie);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Movie  $movie
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Movie $movie)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Movie  $movie
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Movie $movie)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -69,7 +48,7 @@ class MovieController extends Controller
      */
     public function update(Request $request, Movie $movie)
     {
-        //
+
     }
 
     /**
