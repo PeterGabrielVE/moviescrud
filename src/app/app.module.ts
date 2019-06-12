@@ -5,6 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { FormComponent } from './form/form.component';
+import { Route, RouterModule } from '@angular/router';
+
+const routes : Route[] = [
+  {path:'', component: HomeComponent},
+  {path:'home', component: HomeComponent},
+  {path:'form', component: FormComponent}
+];
 
 @NgModule({
   declarations: [
@@ -14,7 +21,8 @@ import { FormComponent } from './form/form.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
