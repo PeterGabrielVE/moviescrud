@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MoviesService } from '../services/movies.service';
+import { HttpClient } from '@angular/common/http';
+import { Movie } from '../interfaces/movies';
+
 
 @Component({
   selector: 'app-home',
@@ -7,7 +11,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  API_ENDPOINT = 'http://localhost:8000/api';
+  movies: Movie[];
+
+  constructor(private movieService: MoviesService, private httpClient: HttpClient) {
+    httpClient.get(this.API_ENDPOINT + '/movies').subscribe((data : Movie[]) =>{
+      this.movies = data;
+      console.log(data);
+    });
+  }
 
   ngOnInit() {
   }
