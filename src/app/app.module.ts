@@ -7,12 +7,14 @@ import { HomeComponent } from './home/home.component';
 import { FormComponent } from './form/form.component';
 import { Route, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 const routes : Route[] = [
   {path:'', component: HomeComponent},
   {path:'home', component: HomeComponent},
-  {path:'form', component: FormComponent}
+  {path:'form', component: FormComponent},
+  {path:'form/:id', component: FormComponent}
 ];
 
 @NgModule({
@@ -25,7 +27,8 @@ const routes : Route[] = [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,28 +1,26 @@
-<form>
+<h2>Crear Película</h2>
+<div>
   <div class="form-group">
     <label for="name">Nombre</label>
-    <input type="text" class="form-control" id="name"  placeholder="Ingrese Nombre">
+    <input [(ngModel)]="movie.name" type="text" class="form-control" id="name"  placeholder="Ingrese Nombre">
   </div>
   <div class="form-group">
     <label for="description">Descripción</label>
-    <textarea type="text" class="form-control" id="description"  placeholder="Ingrese Descripción"></textarea>
+    <textarea [(ngModel)]="movie.description" type="text" class="form-control" id="description"  placeholder="Ingrese Descripción"></textarea>
   </div>
   <div class="form-group">
     <label for="genere">Género</label>
-    <input type="text" class="form-control" id="genere"  placeholder="Ingrese Género">
+    <input [(ngModel)]="movie.genere" type="text" class="form-control" id="genere"  placeholder="Ingrese Género">
   </div>
   <div class="form-group">
     <label for="duration">Duración</label>
-    <input type="text" class="form-control" id="duration"  placeholder="Ingrese Duración">
+    <input [(ngModel)]="movie.duration" type="text" class="form-control" id="duration"  placeholder="Ingrese Duración">
   </div>
   <div class="form-group">
     <label for="year">Año</label>
-    <input type="text" class="form-control" id="year"  placeholder="Ingrese Año">
+    <input [(ngModel)]="movie.year" type="text" class="form-control" id="year"  placeholder="Ingrese Año">
   </div>
 
-  <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+
+  <button (click)='saveMovie()' class="btn btn-primary">Guardar</button>
+</div>

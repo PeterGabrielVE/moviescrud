@@ -3,18 +3,20 @@
     <tr>
       <th>#</th>
       <th>Nombre</th>
-      <th>Genero</th>
+      <th>Género</th>
       <th>Año</th>
       <th>Duración</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let movie of movies">
-      <th scope="row">1</th>
+      <th scope="row">{{movie.id}}</th>
       <td>{{movie.name}}</td>
       <td>{{movie.genere}}</td>
-      <td>{{movie.year}}}</td>
+      <td>{{movie.year}}</td>
       <td>{{movie.duration}}</td>
+      <td><a class="btn btn-primary btn-sm" routerLink="/form/{{movie.id}}">Editar</a></td>
     </tr>
 
   </tbody>

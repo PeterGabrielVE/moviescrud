@@ -15,10 +15,17 @@ export class HomeComponent implements OnInit {
   movies: Movie[];
 
   constructor(private movieService: MoviesService, private httpClient: HttpClient) {
-    httpClient.get(this.API_ENDPOINT + '/movies').subscribe((data : Movie[]) =>{
+    /*httpClient.get(this.API_ENDPOINT + '/movies').subscribe((data : Movie[]) =>{
       this.movies = data;
       console.log(data);
-    });
+    });*/
+
+    this.movieService.get().subscribe((data: Movie[])=>{
+    this.movies = data;}, (error)=>{ console.log(error);
+              alert('Ocurrió un error');}
+
+  );
+
   }
 
   ngOnInit() {
