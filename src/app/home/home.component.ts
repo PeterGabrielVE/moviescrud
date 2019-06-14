@@ -38,7 +38,8 @@ export class HomeComponent implements OnInit {
   delete(id){
     if(confirm('¿Seguro que deseas eliminar esta pelicula?')){
       this.movieService.delete(id).subscribe((data: Movie[])=>{
-        this.movies = data;}, (error)=>{ console.log(error);
+        this.movies = data;
+        this.getMovies();}, (error)=>{ console.log(error);
                   alert('Ocurrió un error');})
     }
 }
