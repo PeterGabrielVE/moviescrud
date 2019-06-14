@@ -20,15 +20,26 @@ export class HomeComponent implements OnInit {
       console.log(data);
     });*/
 
+   this.getMovies();
+
+  }
+
+  getMovies(){
     this.movieService.get().subscribe((data: Movie[])=>{
-    this.movies = data;}, (error)=>{ console.log(error);
-              alert('Ocurrió un error');}
+      this.movies = data;}, (error)=>{ console.log(error);
+                alert('Ocurrió un error');}
 
-  );
-
+    );
   }
 
   ngOnInit() {
   }
 
+  delete(id){
+    if(confirm('¿Seguro que deseas eliminar esta pelicula?')){
+      this.movieService.delete(id).subscribe((data: Movie[])=>{
+        this.movies = data;}, (error)=>{ console.log(error);
+                  alert('Ocurrió un error');})
+    }
+}
 }

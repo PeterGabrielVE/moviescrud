@@ -24,4 +24,8 @@ export class MoviesService {
     return this.httpClient.put(this.API_ENDPOINT + '/movies/' + movie.id, movie, {headers : headers});
   }
 
+  delete(id){
+    return this.httpClient.delete(this.API_ENDPOINT + '/movies/' + id);
+  }
+
 }
