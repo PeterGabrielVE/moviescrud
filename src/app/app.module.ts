@@ -8,6 +8,9 @@ import { FormComponent } from './form/form.component';
 import { Route, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
+import { RegisterComponent } from './register/register.component';
 
 
 const routes : Route[] = [
@@ -21,7 +24,10 @@ const routes : Route[] = [
   declarations: [
     AppComponent,
     HomeComponent,
-    FormComponent
+    FormComponent,
+    LoginComponent,
+    ProfileComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
