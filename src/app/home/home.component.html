@@ -17,8 +17,8 @@
       <td>{{movie.genere}}</td>
       <td>{{movie.year}}</td>
       <td>{{movie.duration}}</td>
-      <td><a class="btn btn-primary btn-sm" routerLink="/form/{{movie.id}}">Editar</a></td>
-      <td><a class="btn btn-danger btn-sm" (click)="delete(movie.id)">Eliminar</a></td>
+      <td><a class="btn btn-primary btn-sm" routerLink="/form/{{movie.id}}"><fa-icon [icon]="faEdit"></fa-icon></a></td>
+      <td><a class="btn btn-danger btn-sm" (click)="delete(movie.id)"><fa-icon [icon]="faTrash"></fa-icon></a></td>
     </tr>
 
   </tbody>

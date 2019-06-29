@@ -18,3 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::resource('movies', 'MovieController');
+Route::post('register', 'UserController@register');
+Route::post('login', 'UserController@login');
+Route::get('profile', 'UserController@getAuthenticatedUser');
+

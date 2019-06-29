@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
+
 import { MoviesService } from '../services/movies.service';
 import { HttpClient } from '@angular/common/http';
 import { Movie } from '../interfaces/movies';
@@ -11,6 +13,8 @@ import { Movie } from '../interfaces/movies';
 })
 export class HomeComponent implements OnInit {
 
+  faEdit = faEdit;
+  faTrash = faTrash;
   API_ENDPOINT = 'http://localhost:8000/api';
   movies: Movie[];
 
